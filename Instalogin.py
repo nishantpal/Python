@@ -5,8 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-usernameStr = 'nishant.pal3'
-passwordStr = 'intime#lpu'
+usernameStr = 'username'
+passwordStr = 'password'
 
 browser = webdriver.Chrome('C:/Users/Nishant/Downloads/chromedriver_win32/chromedriver.exe')
 browser.get(('https://www.instagram.com/accounts/login/?source=auth_switcher'))
