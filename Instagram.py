@@ -1,7 +1,7 @@
 from selenium import webdriver
-#from selenium.webdriver.common.by import By
-#from selenium.webdriver.support.ui import WebDriverWait
-#from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import random
 import string
@@ -39,10 +39,9 @@ for no_of_account in range(number):
     row = [fnameStr,' ', usernameStr,' ', passwordStr, ' ', emailStr, '\n']
     file1.writelines(row)
     file1.close()
-
-    #sleep for 90 seconds to open instagram page, till then add extension of Hoxx vpn in your browser
-    time.sleep(90)
-
+    
+    time.sleep(10)
+        
     #to open instagram link in the browser
     browser.get(('https://www.instagram.com/accounts/emailsignup/?hl=en'))
 
@@ -64,5 +63,13 @@ for no_of_account in range(number):
     #click on the submit button
     browser.find_elements_by_css_selector('form input')[3].submit()
 
-    #again sleep for 30 seconds to generate another account
-    time.sleep(30)
+    time.sleep(10)  #to click on not now on notification tab
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".aOOlW.HoLwm"))).click()
+    time.sleep(5)   #to click on profile
+    browser.find_element_by_xpath('//*[@id="react-root"]/section/nav/div[2]/div/div/div[3]/div/div[3]/a/span').click()
+    time.sleep(5)   #to click on settings
+    browser.find_element_by_xpath('//*[@id="react-root"]/section/main/div/header/section/div[1]/div/button/span').click()
+    time.sleep(5)   #to click on log out
+    browser.find_element_by_xpath('/html/body/div[3]/div/div/div/div/button[6]').click()
+
+# end of for loop
