@@ -9,3 +9,5 @@ Download chrome driver from 'http://chromedriver.chromium.org/downloads' and giv
 
 To run python script open file as edit with IDLE and press 'F5' or goto Run > Run module
 
+Add free VPN on your system before running the script
+
